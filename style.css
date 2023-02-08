@@ -1,0 +1,24 @@
+body{
+    user-select: none;
+    background-color: whitesmoke;
+}
+
+
+
+.cronometro{
+    font-size: 20px;
+
+
+    text-shadow: 0 0 10px rgb(80, 77, 77);    
+}
+
+.center{
+    width: 360px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+

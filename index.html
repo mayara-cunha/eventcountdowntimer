@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>event countdown timer</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Event Countdown Timer</h1>
+        <p class="lead">this is a simple event countdown timer. you can add the date, 
+            time (optional) and the name of your event and we will time it for you. also, you can set an alarm sound any time if you want. enjoy!</p>
+    </div>    
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>schedule your event</h1>
+                <form>
+                      
+                    <div class="form-group">
+                        <label for="txtNome">name:</label>
+                        <input class="form-control" type="text" id="txtNome" name="eventName" placeholder="type the name of your event" required>
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="day">day:</label>
+                            <input class="form-control" type="number" id="day" name="eventDay" value="1" min="01" max="31" required>
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                            <label for="month">month:</label>
+                            <select class="form-control" id="month" name="eventMonth" required>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                              </select> 
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="year">year:</label>
+                            <input class="form-control" type="number" id="year" name="eventYear" value="2023" min="2023" required>
+                        </div> 
+                    </div>          
+        
+                    <div class="form-row">
+        
+                        <div class="form-group col-md-4">                      
+                            <label for="hour">hours:</label>
+                            <input class="form-control" type="number" id="hour" name="eventHour" value="00" max="23" min="00">
+                        </div>    
+            
+                        <div class="form-group col-md-4">
+                            <label for="minute">minutes:</label>
+                            <input class="form-control" type="number" id="minute" name="eventMinute" value="00" max="59" min="00">
+                        </div>
+            
+                        <div class="form-group col-md-4">
+                            <label for="second">seconds:</label>
+                            <input class="form-control" type="number" id="second" name="eventSecond" value="00" max="59" min="00">
+                        </div>
+                    </div>
+        
+                </form>
+
+                <div class="align-items-center">
+                    <button class="btn btn-dark" type="submit" id="submit" name="startBtn">create</button>                           
+                    <button class="btn btn-dark" type="submit" id="resetBtn" name="resettBtn">reset all</a>     
+                </div>
+                
+                                           
+            </div>
+
+            <div class="col-6">
+                
+
+                <div>
+                    <h4 id="event">event name: </h4>
+                    <div id="timer" class="cronometro">
+                        00d : 00h : 00m : 00s        
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <audio id="audio" src="alarm_clock.mp3"></audio>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" name="checkbox" class="custom-control-input" id="customSwitches">
+                    <label class="custom-control-label" for="customSwitches">set the alarm</label>
+                  </div>
+
+
+        </div>
+
+    </div>
+    
+     <!--bootstrap e jquery-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
