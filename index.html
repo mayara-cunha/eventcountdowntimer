@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="timer.ico" type="image/x-icon">
-
+    <!--google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Tomorrow:ital,wght@1,300&display=swap" rel="stylesheet">
-    
     <title id="title">CountDown</title>
 </head>
 <body>
@@ -21,76 +20,66 @@
             time (optional) and the name of your event and we will time it for you. also, you can set an alarm sound any time if you want. enjoy!</p>
     </div>    
     <div class="container">
-        <div class="row">
-            
+        <div class="row">  
             <div class="col-6">
                 <h1>schedule your event</h1>
-                <form>                   
+                <form id="form">                   
                     <div class="form-group">
-                        <label for="txtNome">name:</label>
-                        <input class="form-control" type="text" id="txtNome" name="eventName" placeholder="type the name of your event" required>
-                        <div class="col-sm-12">
-                            <small id="msgErrorName" class="text-danger">                             
-                            </small>      
-                        </div>
+                        <label for="eventName">name:</label>
+                        <input class="form-control" type="text" id="txtNome" name="eventName" placeholder="type the name of your event">
                     </div>
                     <div class="form-group">
-                        <label for="date">date:</label>
-                        <input class="form-control" type="date" id="date" name="date" required>
-                        <div class="col-sm-12">
-                            <small id="msgErrorDate" class="text-danger">                            
-                            </small>      
-                        </div>
+                        <label for="eventDate">date:</label>
+                        <input class="form-control" type="date" id="date" name="eventDate" required>
                     </div>       
                     <div class="form-row">
                         <div class="form-group col-md-4">                      
-                            <label for="hour">hours:</label>
+                            <label for="eventHour">hours:</label>
                             <input class="form-control" type="number" id="hour" name="eventHour" value="00" max="23" min="00">
-                        </div>            
+                        </div>          
                         <div class="form-group col-md-4">
-                            <label for="minute">minutes:</label>
+                            <label for="eventMinute">minutes:</label>
                             <input class="form-control" type="number" id="minute" name="eventMinute" value="00" max="59" min="00">
-                        </div>            
+                        </div>          
                         <div class="form-group col-md-4">
-                            <label for="second">seconds:</label>
+                            <label for="eventSecond">seconds:</label>
                             <input class="form-control" type="number" id="second" name="eventSecond" value="00" max="59" min="00">
                         </div>
-                    </div>      
-                </form>
-
-                <div class="buttons">
-                    <button class="btn btn-dark" type="submit" id="submit" name="startBtn">start</button>                           
-                    <button class="btn btn-dark" type="submit" id="resetBtn" name="resetBtn">reset</button>    
-                </div>                                          
+                    </div>
+                    <div class="text-center">
+                        <input class="btn btn-dark" type="submit" id="startBtn" name="startBtn" value="start">
+                        <button class="btn btn-danger" type="reset" id="resetBtn" name="resetBtn">reset</button> 
+                    </div> 
+                </form>                                     
             </div>
-
             <div class="col-6">
-                <div id="timers">
-                    <h4 id="event"></h4>
-                    <div id="timer" class="cronometro">
+                <div class="text-center">
+                    <h4 id="eventName"></h4>
+                    <div id="timer" class="displayTimer">
                         00d : 00h : 00m : 00s
-                    </div>            
-                </div>             
+                    </div>  
+                </div>    
                 <hr>
-                <div>
-                    <audio id="audio" src="alarm_clock.mp3"></audio>
-                </div>
+                <audio id="audio" src="alarm.wav"></audio>
                 <div class="custom-control custom-switch">
                     <input type="checkbox" name="checkbox" class="custom-control-input" id="customSwitches">
                     <label class="custom-control-label" for="customSwitches">set the alarm sound</label>
                 </div>
-        </div>
+            </div>
+        </div>    
     </div>
     <footer>
         <div class="footer-copyright text-center py-3">made by:       
           <a href="https://github.com/mayara-cunha">mayara cunha</a>
         </div>
     </footer>   
-
-     <!--bootstrap e jquery-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <!--jquery e jquery validation-->
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+     <script scr="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
+    <script type="text/javascript" src="./validation.js"></script>
 </body>
-
 </html>
